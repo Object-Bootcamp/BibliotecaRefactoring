@@ -27,18 +27,11 @@ public class Program {
             } else if (i1 == 2) {
                 choose_book(reader);
             } else if (i1 == 3) {
-                if (loggedIn()) {
-                    System.out.println("\n");
-                    System.out.println("Your library number is " + savedLibraryNumber);
-                } else {
-                    System.out.println("\n");
-                    System.out.println("Please talk to Librarian. Thank you.");
-                }
+                talkToLibrarian();
             } else if (i1 == 4) {
                 displayMovies();
             } else if (i1 == 5) {
                 login(reader);
-
             } else if (i1 == 9) {
                 System.out.println("Quitting...");
                 break;
@@ -46,6 +39,16 @@ public class Program {
                 System.out.println("\n");
                 System.out.println("Enter a valid integer!!");
             }
+        }
+    }
+
+    private static void talkToLibrarian() {
+        if (loggedIn()) {
+            System.out.println("\n");
+            System.out.println("Your library number is " + savedLibraryNumber);
+        } else {
+            System.out.println("\n");
+            System.out.println("Please talk to Librarian. Thank you.");
         }
     }
 
