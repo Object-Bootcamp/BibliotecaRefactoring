@@ -1,14 +1,17 @@
 package com.Biblioteca;
 
 import org.junit.After;
-
-import static com.Biblioteca.StubbedInputStream.stubInputStream;
-import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.matchers.JUnitMatchers.containsString;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+
+import static com.Biblioteca.Program.clearLogin;
+import static com.Biblioteca.StubbedInputStream.stubInputStream;
+import static org.junit.Assert.assertThat;
+import static org.junit.matchers.JUnitMatchers.containsString;
 
 public class ProgramTest {
     private PrintStream console;
@@ -143,5 +146,6 @@ public class ProgramTest {
     @After
     public void after() {
         System.setOut(console);
+        clearLogin();
     }
 }

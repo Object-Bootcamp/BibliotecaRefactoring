@@ -134,7 +134,7 @@ public class Program {
     }
 
 
-    private static void clearLogin() {
+    public static void clearLogin() {
         loggedIn = false;
         savedLibraryNumber = "";
     }
