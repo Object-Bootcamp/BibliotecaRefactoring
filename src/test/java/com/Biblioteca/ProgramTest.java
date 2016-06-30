@@ -1,12 +1,12 @@
-package test;
+package com.Biblioteca;
 
-import main.Program;
 import org.junit.After;
+
+import static com.Biblioteca.StubbedInputStream.stubInputStream;
 import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.matchers.JUnitMatchers.containsString;
-import static test.StubbedInputStream.stubInputStream;
 
 import java.io.*;
 
