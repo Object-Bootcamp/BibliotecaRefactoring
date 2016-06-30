@@ -8,35 +8,41 @@ public class Program {
     private static String savedLibraryNumber = "";
 
     public static void main(String[] args) {
+        label:
         while (true) {
             printWelcomeMessage();
 
             InputStreamReader inputStream = new InputStreamReader(System.in);
             BufferedReader reader = new BufferedReader(inputStream);
-            int i1 = 0;
+            int selectedMenuOption = 0;
             try {
                 String value = reader.readLine();
-                i1 = Integer.parseInt(value);
+                selectedMenuOption = Integer.parseInt(value);
+                switch (selectedMenuOption) {
+                    case 1:
+                        displayAvailableBooks();
+                        break;
+                    case 2:
+                        choose_book(reader);
+                        break;
+                    case 3:
+                        talkToLibrarian();
+                        break;
+                    case 4:
+                        displayMovies();
+                        break;
+                    case 5:
+                        login(reader);
+                        break;
+                    case 9:
+                        System.out.println("Quitting...");
+                        break label;
+                    default:
+                        System.out.println("\n");
+                        System.out.println("Enter a valid integer!!");
+                        break;
+                }
             } catch (Exception e) {
-                // Do you know what numbers are!!!
-                System.out.println("Enter a valid integer!!");
-            }
-
-            if (i1 == 1) {
-                displayAvailableBooks();
-            } else if (i1 == 2) {
-                choose_book(reader);
-            } else if (i1 == 3) {
-                talkToLibrarian();
-            } else if (i1 == 4) {
-                displayMovies();
-            } else if (i1 == 5) {
-                login(reader);
-            } else if (i1 == 9) {
-                System.out.println("Quitting...");
-                break;
-            } else {
-                System.out.println("\n");
                 System.out.println("Enter a valid integer!!");
             }
         }
